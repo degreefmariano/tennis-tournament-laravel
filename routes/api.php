@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TorneoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('torneos')->group(function () {
+    Route::post('', [TorneoController::class, 'store']);
+    Route::get('', [TorneoController::class, 'index']);
+    Route::get('/{id}', [TorneoController::class, 'show']);
 });
