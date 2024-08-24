@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTorneoRequest;
 use App\Http\Requests\IndexTorneoRequest;
+use App\Http\Requests\StoreTorneoRequest;
 use App\Http\Resources\TorneoResource;
 use App\Http\Resources\TorneosResource;
-use App\Models\Torneo;
 use App\Models\Jugador;
+use App\Models\Torneo;
 use Carbon\Carbon;
 
 class TorneoController extends Controller
@@ -17,7 +17,7 @@ class TorneoController extends Controller
         $torneo = Torneo::create([
             'nombre' => $request->nombre,
             'genero' => $request->genero,
-            'fecha' => Carbon::now()
+            'fecha' => Carbon::now(),
         ]);
 
         $jugadores = $request->jugadores;
@@ -31,7 +31,7 @@ class TorneoController extends Controller
                     'velocidad' => $jugador['velocidad'] ?? null,
                     'tiempo_reaccion' => $jugador['tiempo_reaccion'] ?? null,
                     'genero' => $jugador['genero'],
-                    'torneo_id' => $torneo->id
+                    'torneo_id' => $torneo->id,
                 ]);
             }
         }
@@ -41,7 +41,7 @@ class TorneoController extends Controller
 
         if ($ganador) {
             $resultado = Torneo::RESULTADO_F;
-        }else {
+        } else {
             $resultado = Torneo::RESULTADO_NF;
         }
 
@@ -56,11 +56,11 @@ class TorneoController extends Controller
             'message' => 'Torneo generado exitosamente',
             'data' => new TorneoResource($torneo)], 201);
     }
-    
+
     public function index(IndexTorneoRequest $request)
     {
         $torneo = Torneo::query();
-        
+
         $fechaInputIngles = Carbon::parse($request->input('fecha'))->format('Y-m-d');
 
         if ($request->has('nombre')) {
@@ -76,7 +76,7 @@ class TorneoController extends Controller
         }
 
         if ($request->has('resultado')) {
-        $torneo->where('resultado', $request->input('resultado'));
+            $torneo->where('resultado', $request->input('resultado'));
         }
 
         $torneos = $torneo->get();
@@ -90,13 +90,12 @@ class TorneoController extends Controller
     {
         $torneo = Torneo::find($id);
 
-        if (!$torneo) {
+        if (! $torneo) {
             return response()->json(['message' => 'Torneo no encontrado'], 404);
         }
 
         return response()->json([
             'message' => 'Torneo consultado exitosamente',
-            'data' => new TorneoResource($torneo) ], 200);
+            'data' => new TorneoResource($torneo)], 200);
     }
-
 }

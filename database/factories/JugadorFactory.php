@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Jugador;
 use App\Models\Torneo;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class JugadorFactory extends Factory
 {
@@ -23,4 +23,3 @@ class JugadorFactory extends Factory
         ];
     }
 }
-

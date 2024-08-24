@@ -45,7 +45,7 @@ class StoreTorneoRequest extends FormRequest
 
             $count = count($jugadores);
 
-            if (!$this->isPowerOfTwo($count)) {
+            if (! $this->isPowerOfTwo($count)) {
                 $validator->errors()->add('jugadores', 'La cantidad de jugadores debe ser una potencia de 2.');
             }
         });

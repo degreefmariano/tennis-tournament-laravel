@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class IndexTorneoRequest extends FormRequest
 {
@@ -15,19 +15,19 @@ class IndexTorneoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => ['sometimes', Rule::exists('torneos','nombre')],
+            'nombre' => ['sometimes', Rule::exists('torneos', 'nombre')],
             'fecha' => ['nullable', 'date_format:d-m-Y'],
-            'genero' => ['sometimes', Rule::exists('torneos','genero')],
-            'resultado' => ['sometimes', Rule::exists('torneos','resultado')],
+            'genero' => ['sometimes', Rule::exists('torneos', 'genero')],
+            'resultado' => ['sometimes', Rule::exists('torneos', 'resultado')],
         ];
-    }   
+    }
 
     public function messages()
     {
         return [
-            'nombre.exists'   => "Nombre de torneo inexistente",
-            'genero.exists'   => "El género del torneo debe ser Masculino ó Femenino",
-            'resultado.exists' => "El resultado del torneo debe ser Finalizado ó No Finalizado",
+            'nombre.exists' => 'Nombre de torneo inexistente',
+            'genero.exists' => 'El género del torneo debe ser Masculino ó Femenino',
+            'resultado.exists' => 'El resultado del torneo debe ser Finalizado ó No Finalizado',
         ];
     }
 }

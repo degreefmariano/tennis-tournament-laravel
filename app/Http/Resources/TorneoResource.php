@@ -16,7 +16,7 @@ class TorneoResource extends JsonResource
             'genero' => $this->genero,
             'ganador' => $this->ganador,
             'resultado' => $this->resultado,
-            'jugadores' => JugadorResource::collection($this->whenLoaded('jugadores'))
+            'jugadores' => JugadorResource::collection($this->whenLoaded('jugadores')),
         ];
     }
 }

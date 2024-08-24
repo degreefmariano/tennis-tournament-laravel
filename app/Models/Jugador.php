@@ -11,7 +11,9 @@ class Jugador extends Model
     use HasFactory;
 
     protected $table = 'jugadores';
+
     protected $primaryKey = 'id';
+
     protected $connection = 'mysql';
 
     protected $fillable = [
@@ -22,7 +24,7 @@ class Jugador extends Model
         'tiempo_reaccion',
         'genero',
         'suerte',
-        'torneo_id'
+        'torneo_id',
     ];
 
     public function torneo()
@@ -57,15 +59,15 @@ class Jugador extends Model
     {
         $suerte1 = mt_rand(0, 10);
         $suerte2 = mt_rand(0, 10);
-    
+
         $jugador1->suerte = $suerte1;
         $jugador2->suerte = $suerte2;
         $jugador1->save();
         $jugador2->save();
-    
+
         $habilidad1 = $jugador1->habilidad + $suerte1;
         $habilidad2 = $jugador2->habilidad + $suerte2;
-    
+
         if ($genero === 'Masculino') {
             $habilidad1 += $jugador1->fuerza + $jugador1->velocidad;
             $habilidad2 += $jugador2->fuerza + $jugador2->velocidad;
@@ -73,8 +75,7 @@ class Jugador extends Model
             $habilidad1 += $jugador1->tiempo_reaccion;
             $habilidad2 += $jugador2->tiempo_reaccion;
         }
-    
+
         return $habilidad1 > $habilidad2 ? $jugador1 : $jugador2;
     }
-    
 }

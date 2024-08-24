@@ -15,7 +15,7 @@ class TorneosResource extends JsonResource
             'fecha' => Carbon::parse($this->fecha)->format('d/m/Y'),
             'genero' => $this->genero,
             'ganador' => $this->ganador,
-            'resultado' => $this->resultado
+            'resultado' => $this->resultado,
         ];
     }
 }
