@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "e9daf6c5-997f-4516-8211-380c0d053e2b",
+		"name": "tennis-tournament-laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23989027"
+	},
+	"item": [
+		{
+			"name": "Crear Torneos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{local}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Wimbledon\",\r\n    \"genero\": \"Masculino\",\r\n    \"jugadores\": [\r\n        {\r\n            \"nombre\": \"Juan Perez\",\r\n            \"habilidad\": 80,\r\n            \"fuerza\": 20,\r\n            \"velocidad\": 40,\r\n            \"tiempo_reaccion\": 30,\r\n            \"genero\": \"Masculino\",\r\n            \"torneo_id\": 1\r\n        },\r\n        {\r\n            \"nombre\": \"Roberto López\",\r\n            \"habilidad\": 80,\r\n            \"fuerza\": 20,\r\n            \"velocidad\": 40,\r\n            \"tiempo_reaccion\": 31,\r\n            \"genero\": \"Masculino\",\r\n            \"torneo_id\": 1\r\n        },\r\n        {\r\n            \"nombre\": \"Cesar Gutierrez\",\r\n            \"habilidad\": 80,\r\n            \"fuerza\": 20,\r\n            \"velocidad\": 40,\r\n            \"tiempo_reaccion\": 31,\r\n            \"genero\": \"Masculino\",\r\n            \"torneo_id\": 1\r\n        },\r\n        {\r\n            \"nombre\": \"Jorge Velez\",\r\n            \"habilidad\": 80,\r\n            \"fuerza\": 20,\r\n            \"velocidad\": 40,\r\n            \"tiempo_reaccion\": 31,\r\n            \"genero\": \"Masculino\",\r\n            \"torneo_id\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/torneos",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"torneos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Torneo por id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{local}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/torneos/1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"torneos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Torneo por parametros",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{local}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/torneos/?fecha=24-08-2024",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"torneos",
+						""
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Wimbledon",
+							"disabled": true
+						},
+						{
+							"key": "fecha",
+							"value": "24-08-2024"
+						},
+						{
+							"key": "genero",
+							"value": "Masculino",
+							"description": "Masculino ó Femenino",
+							"disabled": true
+						},
+						{
+							"key": "resultado",
+							"value": "Finalizado",
+							"description": "Finalizado ó No Finalizado",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3002/api"
+		},
+		{
+			"key": "accesToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
