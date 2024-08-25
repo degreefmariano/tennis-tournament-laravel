@@ -178,4 +178,8 @@ En algunos casos, se utilizan form requests personalizados para controlar la val
 Esta estructura técnica busca promover la reutilización del código, la legibilidad y la escalabilidad del proyecto, siguiendo las mejores prácticas de desarrollo en Laravel.
 
 - [Mi Linkedin](https://linkedin.com/in/mariano-de-greef).  
+<<<<<<< HEAD
 - [Mi email personal](mailto:degreefmariano@gmail.com).
+=======
+- [Mi email personal](mailto:degreefmariano@gmail.com).
+>>>>>>> 61f0512430f5f9f551137062b872d2562a2d12e9
