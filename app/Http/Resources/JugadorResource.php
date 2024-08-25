@@ -17,8 +17,6 @@ class JugadorResource extends JsonResource
             'tiempo_reaccion' => $this->tiempo_reaccion,
             'genero' => $this->genero,
             'torneo_id' => $this->torneo_id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ];
     }
 }

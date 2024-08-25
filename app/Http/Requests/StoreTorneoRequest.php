@@ -22,7 +22,6 @@ class StoreTorneoRequest extends FormRequest
             'jugadores.*.velocidad' => 'required|integer|between:0,100',
             'jugadores.*.tiempo_reaccion' => 'required_if:genero,Femenino|integer|between:0,100',
             'jugadores.*.genero' => 'required|in:Masculino,Femenino',
-            'jugadores.*.torneo_id' => 'required|integer',
         ];
     }
 

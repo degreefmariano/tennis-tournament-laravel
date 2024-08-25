@@ -10,7 +10,6 @@ class JugadorController extends Controller
 {
     public function store(StoreJugadorRequest $request)
     {
-        dd('ingresa a store de JugadorController');
         $torneo = Jugador::create($request->validated());
 
         return response()->json($torneo, 201);
