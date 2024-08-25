@@ -93,8 +93,7 @@ La API ofrece los siguientes endpoints:
                 "velocidad": 60,
                 "tiempo_reaccion": 50,
                 "genero": "Masculino"
-            },
-            ...
+            }
         ]
     }
    ```  
